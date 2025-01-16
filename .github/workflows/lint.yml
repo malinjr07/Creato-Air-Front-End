@@ -1,5 +1,11 @@
 name: Lint and Prettier
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - '**' # Specify Branch name as necessity
+  pull_request:
+    branches:
+      - '**' # Specify Branch name as necessity
 jobs:
   eslint:
     runs-on: ubuntu-latest
@@ -14,10 +20,12 @@ jobs:
         with:
           cmd: install --immutable
       - name: Run ESLint
+        #  if: github.event_name == 'push'
         uses: borales/actions-yarn@v4
         with:
           cmd: lint . --ext .js,.jsx,.ts,.tsx
       - name: Prettify Code
+        #  if: github.event_name == 'pull_request' && github.base_ref == 'main'
         uses: borales/actions-yarn@v4
         with:
           cmd: prettier --write .
