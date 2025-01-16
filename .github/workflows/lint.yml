@@ -17,8 +17,12 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: lint . --ext .js,.jsx,.ts,.tsx
-      - name: Run Prettier
+      - name: Check Prettier
         uses: borales/actions-yarn@v4
         with:
           cmd: prettier --check .
+      - name: Prettify Code
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: prettier --write .
 
