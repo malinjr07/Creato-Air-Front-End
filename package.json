@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "next": "15.1.4",
@@ -49,3 +48,4 @@
     ]
   }
 }
+

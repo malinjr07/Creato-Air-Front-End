@@ -46,7 +46,6 @@ next-env.d.ts
 /.storybook
 /.jest
 /.jest-cache
-/.vscode
 
 # yarn v4
 .pnp.*
