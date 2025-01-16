@@ -15,8 +15,10 @@ jobs:
           run: yarn install
       - name: Run ESLint
         uses: borales/actions-yarn@v4
-        run: yarn lint . --ext .js,.jsx,.ts,.tsx
+        with:
+          run: yarn lint . --ext .js,.jsx,.ts,.tsx
       - name: Run Prettier
         uses: borales/actions-yarn@v4
-        run: yarn prettier --check .
+        with:
+          run: yarn prettier --check .
 
