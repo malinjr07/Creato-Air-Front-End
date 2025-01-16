@@ -2,10 +2,10 @@ name: Lint and Prettier
 on:
   push:
     branches:
-      - "**" # Specify Branch name as necessity
+      - '**' # Specify Branch name as necessity
   pull_request:
     branches:
-      - "**" # Specify Branch name as necessity
+      - '**' # Specify Branch name as necessity
 jobs:
   eslint:
     runs-on: ubuntu-latest
@@ -14,7 +14,7 @@ jobs:
       - name: Set up Node.js LTS
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
@@ -29,3 +29,12 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: prettier --write .
+      - name: Commit changes
+        # if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Prettified code'
+          git push
+
