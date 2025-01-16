@@ -9,16 +9,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-      - name: Get yarn cache directory path
-          id: yarn-cache-dir-path
-          run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v4
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      - name: Run install
+        uses: borales/actions-yarn@v4
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          cmd: install --frozen-lockfile
       - name: Run ESLint
         uses: borales/actions-yarn@v4
         with:
