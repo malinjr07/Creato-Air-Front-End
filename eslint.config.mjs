@@ -12,7 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignores: process.env.NODE_ENV === 'production' ? ['src/stories/*'] : [],
+    // ignores: ['src/stories/*'],
   },
 ];
 
