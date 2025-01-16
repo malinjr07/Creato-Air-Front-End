@@ -12,13 +12,13 @@ jobs:
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
-          cmd: yarn install
+          cmd: install
       - name: Run ESLint
         uses: borales/actions-yarn@v4
         with:
-          cmd: yarn lint . --ext .js,.jsx,.ts,.tsx
+          cmd: lint . --ext .js,.jsx,.ts,.tsx
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: yarn prettier --check .
+          cmd: prettier --check .
 
