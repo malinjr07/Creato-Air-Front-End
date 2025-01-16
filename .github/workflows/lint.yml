@@ -4,15 +4,19 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js
+      - uses: actions/checkout@v3
+      - name: Set up Node.js LTS
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-      - name: Install dependencies
-        run: npm install
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
       - name: Run ESLint
-        run: npm run eslint . --ext .js,.jsx,.ts,.tsx
+        uses: borales/actions-yarn@v4
+        cmd: lint . --ext .js,.jsx,.ts,.tsx
       - name: Run Prettier
-        run: npm run prettier --check .
+        uses: borales/actions-yarn@v4
+        cmd: prettier --check .
 
