@@ -8,12 +8,15 @@ For managing the project in a more concise way, we can create these folders for 
   - `core`
   - `common`
   - `layouts`
+- `pages`
+- `stories`
+- `styles`
+- `pages`
 - `utils`
   - `lib`
   - `services`
   - `hooks`
   - `store`
-- `assets`
 
 ### Components
 
@@ -21,15 +24,51 @@ This folder contains reusable UI components used throughout the application. It 
 
 #### &nbsp; Core
 
-which stores the core components such as buttons, inputs.
+The `core` folder contains the unbreakable components such as buttons, inputs, svg icons etc.
 
 #### &nbsp; Common
 
-which stores common components, shared across multiple layouts in the application. Such as Different Types of Cards, DropDowns, Tabs, Accordions, Modals.
+The `common` folder contains common components that combine multiple core components. These are shared across different layouts in the application. Examples include various types of cards, dropdowns, tabs, accordions, and modals.
 
 #### &nbsp; Layouts
 
-The layouts folder contains layout components (Most Particularly the Sections of each pages) that define the overall structure or layout shared across multiple pages in the application. These layout components often include common elements like headers, footers, or sidebars.
+The `layouts` folder contains components that define the structure of pages. These components often include headers, footers, or sidebars and are used across multiple pages. Layout components are usually made up of multiple common and core components.
+
+### Pages
+
+The `pages` folder contains the main pages of the application. Each file in this folder represents a route in the application. These pages are composed of various components from the `components` folder and are responsible for rendering the content that users interact with. The structure of the `pages` folder follows the ([`Official Next.js Project Structure and Organization`](https://nextjs.org/docs/pages/getting-started/project-structure)).
+
+#### &nbsp; Example
+
+Here is an example of a simple page component:
+
+```javascript
+// filepath: /path/to/pages/Home.js
+import React from 'react';
+import Header from '../components/layouts/Header';
+import Footer from '../components/layouts/Footer';
+import MainContent from '../components/common/MainContent';
+
+const Home = () => {
+  return (
+    <div>
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+};
+
+export default Home;
+```
+
+### Stories
+
+The `stories` folder contains Storybook stories for the components in the application. These stories are used to document and visually test components in isolation. Each component typically has a corresponding story file that demonstrates its various states and uses.
+
+### Styles
+
+The `styles` folder contains global styles, theme definitions, and any other styling-related code. This includes CSS, SCSS, or styled-components files that define the look and feel of the application. It helps maintain a consistent design system across the entire project.
 
 ### Utils
 
@@ -73,7 +112,3 @@ const useStore = create((set) => ({
 
 export default useStore;
 ```
-
-### Assets
-
-The `assets` folder contains static files such as images, fonts, or any other assets used in the application.
