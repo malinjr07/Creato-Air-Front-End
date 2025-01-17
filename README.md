@@ -13,10 +13,11 @@ For managing the project in a more concise way, we can create these folders for 
 - `styles`
 - `pages`
 - `utils`
+  - `hooks`
   - `lib`
   - `services`
-  - `hooks`
   - `store`
+  - `types`
 
 ### Components
 
@@ -44,12 +45,13 @@ Here is an example of a simple page component:
 
 ```javascript
 // filepath: /path/to/pages/Home.js
+import { NextPage } from 'next';
 import React from 'react';
 import Header from '../components/layouts/Header';
 import Footer from '../components/layouts/Footer';
 import MainContent from '../components/common/MainContent';
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
     <div>
       <Header />
@@ -74,6 +76,10 @@ The `styles` folder contains global styles, theme definitions, and any other sty
 
 The `utils` folder contains utility functions and helpers that are used throughout the application.
 
+#### &nbsp; Hooks
+
+The `hooks` folder contains custom React hooks that encapsulate reusable logic and state management.
+
 #### &nbsp; Lib
 
 The `lib` folder contains utility functions, helpers, or any other code that doesn't fit into the other categories but is still shared across the application.
@@ -81,10 +87,6 @@ The `lib` folder contains utility functions, helpers, or any other code that doe
 #### &nbsp; Services
 
 The `services` folder contains code related to making API calls, handling authentication, or any other service-related logic.
-
-#### &nbsp; Hooks
-
-The `hooks` folder contains custom React hooks that encapsulate reusable logic and state management.
 
 #### &nbsp; Store
 
@@ -112,3 +114,22 @@ const useStore = create((set) => ({
 
 export default useStore;
 ```
+
+#### &nbsp; Types
+
+The `types` folder contains TypeScript type definitions and interfaces used throughout the application. This helps in maintaining type safety and consistency across the codebase. By defining types in a centralized location, it becomes easier to manage and update them as the application evolves.
+
+#### &nbsp; Example
+
+Here is an example of a simple type definition:
+
+```typescript
+// filepath: /path/to/types/index.d.ts
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+```
+
+These type definitions can then be imported and used in various parts of the application to ensure that the data structures are consistent and type-safe.
