@@ -5,29 +5,29 @@ For managing the project in a more concise way, we can create these folders for 
 ## Files and Folders Structure
 
 - `components`
-- - `core`
-- - `common`
-- - `layouts`
+  - `core`
+  - `common`
+  - `layouts`
 - `utils`
-- - `lib`
-- - `services`
-- - `hooks`
-- - `store`
+  - `lib`
+  - `services`
+  - `hooks`
+  - `store`
 - `assets`
 
 ### Components
 
 This folder contains reusable UI components used throughout the application. It has three folders:
 
-#### Core
+#### &nbsp; Core
 
 which stores the core components such as buttons, inputs.
 
-#### Common
+#### &nbsp; Common
 
 which stores common components, shared across multiple layouts in the application. Such as Different Types of Cards, DropDowns, Tabs, Accordions, Modals.
 
-#### Layouts
+#### &nbsp; Layouts
 
 The layouts folder contains layout components (Most Particularly the Sections of each pages) that define the overall structure or layout shared across multiple pages in the application. These layout components often include common elements like headers, footers, or sidebars.
 
@@ -35,28 +35,28 @@ The layouts folder contains layout components (Most Particularly the Sections of
 
 The `utils` folder contains utility functions and helpers that are used throughout the application.
 
-#### Lib
+#### &nbsp; Lib
 
 The `lib` folder contains utility functions, helpers, or any other code that doesn't fit into the other categories but is still shared across the application.
 
-#### Services
+#### &nbsp; Services
 
 The `services` folder contains code related to making API calls, handling authentication, or any other service-related logic.
 
-#### Hooks
+#### &nbsp; Hooks
 
 The `hooks` folder contains custom React hooks that encapsulate reusable logic and state management.
 
-#### Store
+#### &nbsp; Store
 
 The `store` folder contains code related to state management in the application using Zustand.
 
-#### Structure
+#### &nbsp; &nbsp; Structure
 
 - **Store Configuration**: Set up and configure the Zustand store.
 - **Slices**: Organize state into logical slices for better modularity and maintainability.
 
-#### Example
+#### &nbsp; &nbsp; Example
 
 Here is an example of how to set up a Zustand store:
 
