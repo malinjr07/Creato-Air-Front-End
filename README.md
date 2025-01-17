@@ -36,7 +36,7 @@ The `layouts` folder contains components that define the structure of pages. The
 
 ### Pages
 
-The `pages` folder contains the main pages of the application. Each file in this folder represents a route in the application. These pages are composed of various components from the `components` folder and are responsible for rendering the content that users interact with. The structure of the `pages` folder follows the ([`Official Next.js Project Structure and Organization`](https://nextjs.org/docs/pages/getting-started/project-structure)).
+The `pages` folder contains the main pages of the application. Each file in this folder represents a route in the application. These pages are composed of various components from the `components` folder and are responsible for rendering the content that users interact with. The structure of the `pages` folder follows the [`Official Next.js Project Structure and Organization`](https://nextjs.org/docs/pages/getting-started/project-structure).
 
 #### &nbsp; Example
 
