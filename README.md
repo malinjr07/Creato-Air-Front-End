@@ -1,40 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Project Structure
 
-## Getting Started
+For managing the project in a more concise way, we can create these folders for more manageable code:
 
-First, run the development server:
+## Files and Folders Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- `components`
+- - `core`
+- - `common`
+- - `layouts`
+- `utils`
+- - `lib`
+- - `services`
+- - `hooks`
+- - `store`
+- `assets`
+
+### Components
+
+This folder contains reusable UI components used throughout the application. It has three folders:
+
+#### Core
+
+which stores the core components such as buttons, inputs.
+
+#### Common
+
+which stores common components, shared across multiple layouts in the application. Such as Different Types of Cards, DropDowns, Tabs, Accordions, Modals.
+
+#### Layouts
+
+The layouts folder contains layout components (Most Particularly the Sections of each pages) that define the overall structure or layout shared across multiple pages in the application. These layout components often include common elements like headers, footers, or sidebars.
+
+### Utils
+
+The `utils` folder contains utility functions and helpers that are used throughout the application.
+
+#### Lib
+
+The `lib` folder contains utility functions, helpers, or any other code that doesn't fit into the other categories but is still shared across the application.
+
+#### Services
+
+The `services` folder contains code related to making API calls, handling authentication, or any other service-related logic.
+
+#### Hooks
+
+The `hooks` folder contains custom React hooks that encapsulate reusable logic and state management.
+
+#### Store
+
+The `store` folder contains code related to state management in the application using Zustand.
+
+#### Structure
+
+- **Store Configuration**: Set up and configure the Zustand store.
+- **Slices**: Organize state into logical slices for better modularity and maintainability.
+
+#### Example
+
+Here is an example of how to set up a Zustand store:
+
+```javascript
+// filepath: /path/to/store/useStore.js
+import create from 'zustand';
+
+const useStore = create((set) => ({
+  // Define your state and actions here
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+  decrement: () => set((state) => ({ count: state.count - 1 })),
+}));
+
+export default useStore;
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Assets
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+The `assets` folder contains static files such as images, fonts, or any other assets used in the application.

@@ -1,0 +1,23 @@
+# name: Lint and Prettier
+# on:
+#   pull_request:
+#     types: [closed]
+# jobs:
+#   compare-and-pull:
+#     runs-on: ubuntu-latest
+#     if: github.event.pull_request.merged == true
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Create compare and pull request
+#         env:
+#           BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+#           HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
+#         run: |
+#           git fetch origin
+#           git checkout $HEAD_BRANCH
+#           git pull origin $HEAD_BRANCH
+#           git checkout $BASE_BRANCH
+#           git pull origin $BASE_BRANCH
+#           git merge $HEAD_BRANCH
+#           git push origin $BASE_BRANCH
