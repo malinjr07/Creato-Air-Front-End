@@ -19,3 +19,24 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .btnPrimaryLarge {
+    @apply rounded bg-blue-500 px-4 py-2 font-bold text-white;
+  }
+  .btnPrimarySmall {
+    @apply rounded bg-blue-500 px-2 py-1 font-bold text-white;
+  }
+  .btnOutlineLarge {
+    @apply rounded border border-blue-500 px-4 py-2 font-bold text-blue-500;
+  }
+  .btnOutlineSmall {
+    @apply rounded border border-blue-500 px-2 py-1 font-bold text-blue-500;
+  }
+  .btnOpenLarge {
+    @apply rounded bg-blue-500 px-4 py-2 font-bold text-white;
+  }
+  .btnOpenSmall {
+    @apply rounded bg-blue-500 px-2 py-1 font-bold text-white;
+  }
+}

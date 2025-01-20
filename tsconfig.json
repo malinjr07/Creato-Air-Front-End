@@ -17,7 +17,7 @@
       "@/*": ["./src/*"],
       "@common/*": ["./src/components/common/*"],
       "@core/*": ["./src/components/core/*"],
-      "@svgs/*": ["./src/components/core/svg/*"],
+      "@svg/*": ["./src/components/core/svg/*"],
       "@layouts/*": ["./src/components/layouts/*"],
       "@hooks/*": ["./src/utils/hooks/*"],
       "@lib/*": ["./src/utils/lib/*"],

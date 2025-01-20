@@ -40,7 +40,7 @@ const RootLayout: FC<tRootLayoutProp> = ({ children }) => {
   const router = useRouter();
 
   // List of routes without header and footer
-  const noLayoutRoutes = ['/signin', '/signup', '/forgot-password'];
+  const noLayoutRoutes = ['/', '/signin', '/signup', '/forgot-password'];
 
   // Check if the current route is in the list
   const hideLayout = noLayoutRoutes.includes(router.pathname);
