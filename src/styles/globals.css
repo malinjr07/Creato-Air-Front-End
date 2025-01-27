@@ -1,42 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@config '../../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+@utility btnPrimaryLarge {
+  @apply rounded-sm bg-blue-500 px-4 py-2 font-bold text-white;
+}
+
+@utility btnPrimarySmall {
+  @apply rounded-sm bg-blue-500 px-2 py-1 font-bold text-white;
+}
+
+@utility btnOutlineLarge {
+  @apply rounded-sm border border-blue-500 px-4 py-2 font-bold text-blue-500;
+}
+
+@utility btnOutlineSmall {
+  @apply rounded-sm border border-blue-500 px-2 py-1 font-bold text-blue-500;
+}
+
+@utility btnOpenLarge {
+  @apply rounded-sm bg-blue-500 px-4 py-2 font-bold text-white;
+}
+
+@utility btnOpenSmall {
+  @apply rounded-sm bg-blue-500 px-2 py-1 font-bold text-white;
+}
+
+@layer utilities {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
 
-@layer components {
-  .btnPrimaryLarge {
-    @apply rounded bg-blue-500 px-4 py-2 font-bold text-white;
-  }
-  .btnPrimarySmall {
-    @apply rounded bg-blue-500 px-2 py-1 font-bold text-white;
-  }
-  .btnOutlineLarge {
-    @apply rounded border border-blue-500 px-4 py-2 font-bold text-blue-500;
-  }
-  .btnOutlineSmall {
-    @apply rounded border border-blue-500 px-2 py-1 font-bold text-blue-500;
-  }
-  .btnOpenLarge {
-    @apply rounded bg-blue-500 px-4 py-2 font-bold text-white;
-  }
-  .btnOpenSmall {
-    @apply rounded bg-blue-500 px-2 py-1 font-bold text-white;
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
   }
 }
