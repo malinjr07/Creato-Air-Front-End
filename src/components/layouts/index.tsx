@@ -49,9 +49,9 @@ const RootLayout: FC<tRootLayoutProp> = ({ children }) => {
     <>
       <style jsx global>{`
         :root {
-          --font-montserrat: ${montserrat.style.fontFamily};
-          --font-trade-gothic: ${tradeGothic.style.fontFamily};
-          --font-play-write-india: ${playWriteIndia.style.fontFamily};
+          --montserrat: ${montserrat.style.fontFamily};
+          --trade-gothic: ${tradeGothic.style.fontFamily};
+          --play-write-india: ${playWriteIndia.style.fontFamily};
         }
       `}</style>
       {!hideLayout && <Header />}

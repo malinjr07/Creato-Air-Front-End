@@ -13,7 +13,7 @@ const Home: NextPage = () => {
                 <Link
                   href={item.slug}
                   key={index + item.slug}
-                  className="flex flex-row items-center justify-start gap-1 font-montserrat text-base font-semibold text-white"
+                  className="font-montserrat flex flex-row items-center justify-start gap-1 text-base font-semibold text-white"
                 >
                   {item.icon()} {item.title}
                 </Link>
@@ -22,10 +22,12 @@ const Home: NextPage = () => {
             <div className="">
               <Logo />
             </div>
-            <div className="flex flex-row items-center justify-start gap-8"></div>
+            <div className="flex flex-row items-center justify-start gap-8">
+              <Link href={'/'} className="btnPrimaryLarge"></Link>
+            </div>
           </nav>
         </div>
-        <div className="aspect-h-10 aspect-w-23 absolute inset-x-auto top-0 z-10 w-[1380px] rounded-3xl bg-hero bg-cover bg-fixed bg-center bg-no-repeat" />
+        <div className="aspect-h-10 aspect-w-23 bg-hero absolute inset-x-auto top-0 z-10 w-[1380px] rounded-3xl bg-cover bg-fixed bg-center bg-no-repeat" />
         <div className="aspect-h-10 aspect-w-23 absolute inset-x-auto top-0 z-20 w-[1380px] rounded-3xl bg-gradient-to-b from-[rgba(0,0,0,0.6)] from-60% to-[rgba(0,0,0,0.0)]" />
       </section>
       <div className=""></div>
