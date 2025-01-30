@@ -7,6 +7,19 @@
   }
 }
 
+/* @utility mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+@utility my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+} */
+
+@utility container {
+  @apply mx-auto px-2 sm:px-3 md:px-4 lg:px-5 xl:px-16;
+}
+
 @utility btnPrimaryLarge {
   @apply rounded-sm bg-blue-500 px-4 py-2 font-bold text-white;
 }

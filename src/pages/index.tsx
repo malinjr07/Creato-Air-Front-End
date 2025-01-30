@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         <div className="aspect-h-10 aspect-w-23 bg-hero absolute inset-x-auto top-0 z-10 w-[1380px] rounded-3xl bg-cover bg-fixed bg-center bg-no-repeat" />
         <div className="aspect-h-10 aspect-w-23 absolute inset-x-auto top-0 z-20 w-[1380px] rounded-3xl bg-gradient-to-b from-[rgba(0,0,0,0.6)] from-60% to-[rgba(0,0,0,0.0)]" />
       </section>
-      <div className=""></div>
+      <div className="container"></div>
     </>
   );
 };
